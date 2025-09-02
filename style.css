@@ -1,0 +1,45 @@
+body{
+    /* width: 1200px; */
+    /* border: 1px solid gray; */
+    margin:  auto;
+}
+
+li{
+    list-style: none;
+}
+
+nav{
+    background-color: aqua;
+}
+
+.menu{
+    font-size: 20px;
+}
+
+.menu:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.banner-container{
+    width: 1200px;
+    margin: auto;
+}
+
+.banner{
+    height: 450px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(cyan, rgb(33, 137, 137));
+    box-shadow: 4px 4px 4px 4px gray;
+    border-radius: 10px;
+}
+
+
+.bn-img{
+    
+    width: 80%;
+    margin-top: -50px;
+}
