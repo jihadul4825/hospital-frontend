@@ -106,10 +106,16 @@ nav{
 }
 
 footer{
+    background: linear-gradient(cyan, rgb(33, 137, 137));
     padding: 50px;
-    background-color: linear-gradient(66deg, #1CA8C7 -5.25%, #439FA5 46.76%, #4C7D8C);
+    margin-top: 50px;
 }
 
+.doctor-img img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
 
 
 
