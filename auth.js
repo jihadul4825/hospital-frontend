@@ -60,7 +60,10 @@ const handleLogin = (event) => {
     })
         .then((res) => res.json())
         .then((data) => {
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user_id", data.user_id);
+            if (data.token && data.user_id){
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("user_id", data.user_id);
+                window.location.href = "index.html"
+            }
         });
 }
