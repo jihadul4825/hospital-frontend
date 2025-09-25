@@ -19,6 +19,16 @@ const handleRegistration = (event) => {
         document.getElementById("error").innerText = "";
         if(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)){
             
+            fetch("https://jsonplaceholder.typicode.com/patient/register/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(info),
+            })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
+
         }else{
             document.getElementById("error").innerText = "pass must contain Minimum eight characters, at least one letter, one number and one special character";
         }
@@ -33,4 +43,24 @@ const handleRegistration = (event) => {
 const getValue = (id) => {
     const value = document.getElementById(id).value;
     return value;
+}
+
+
+const handleLogin = (event) => {
+    event.preventDefault();
+    const username = getValue("login-username");
+    const password = getValue("login-password");
+
+    fetch("https://jsonplaceholder.typicode.com/patient/login/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({username, password}),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user_id", data.user_id);
+        });
 }
