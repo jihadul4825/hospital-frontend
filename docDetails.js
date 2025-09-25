@@ -30,10 +30,10 @@ const doctorReview = (reviews) => {
 
 
 const displayDetails = (doctor) => {
-const parent = document.getElementById("doc-details");
-const div=document.createElement("div");
-div.classList.add("doc-details-containter");
-div.innerHTML = `
+    const parent = document.getElementById("doc-details");
+    const div=document.createElement("div");
+    div.classList.add("doc-details-containter");
+    div.innerHTML = `
         <div class="doctor-img">
             <img src=${doctor.image} alt="">
         </div>
@@ -55,8 +55,8 @@ div.innerHTML = `
             Take Appointment
             </button>
         </div>
-`;
-parent.appendChild(div);
+        `;
+    parent.appendChild(div);
 };
 
 
@@ -103,5 +103,7 @@ const handleAppointment = () => {
         .then((res) => res.json())
         .then((data) => console.log(data));
 };
+
+
 getparams();
 loadTime();
