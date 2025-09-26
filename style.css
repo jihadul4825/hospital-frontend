@@ -160,6 +160,22 @@ footer{
     margin: auto;
 }
 
+.doctor{
+    width: 350px;
+    height: 400px;
+    box-shadow: 4px 4px 4px 8px gray;
+    border-radius: 10px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+.symtom{
+    width: 50px;
+    padding: 20px;
+    margin: 20px;
+    border: none;
+}
 
 
 
