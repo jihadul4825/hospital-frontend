@@ -84,13 +84,14 @@ const handleAppointment = () => {
     const symptom = document.getElementById("symptom").value;
     const time = document.getElementById("time-container");
     const selectedTime = time.options[time.selectedIndex];
+    const patient_id = localStorage.getItem("patient_id");
     const info = {
         appointment_type: selected.value,
         appointment_status: "Pending",
         time: selectedTime.value,
         symptom: symptom,
         cancel: false,
-        patient: 1,
+        patient: patient_id,
         doctor: param,
     };
     fetch("https://jsonplaceholder.typicode.com/appointment", {
@@ -105,5 +106,15 @@ const handleAppointment = () => {
 };
 
 
+const loadPatientId = () => {
+    const user_id = localStorage.getItem("user_id");
+    fetch(`https://jsonplaceholder.typicode.com/patient/list/?user_id=${user_id})`)
+    .then(res => res.json())
+    .then((data) => {
+        localStorage.setItem("patient_id", data[0].id);
+    });
+}
+
+loadPatientId();
 getparams();
 loadTime();
